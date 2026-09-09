@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Channel Media Player</title>
+    
+    <!-- Open Graph Metadaten, damit der Link direkt Vorschaubilder und Infos ausliest -->
+    <meta property="og:title" content="WhatsApp Channel Media Player">
+    <meta property="og:description" content="Höre dir den Song an und sieh dir das Bild aus dem WhatsApp-Channel an.">
+    <meta property="og:url" content="https://whatsapp.com/channel/0029VbCHLma0wajn1YRl4B1J/130">
+
+    <style>
+        :root {
+            --wa-green: #00a884;
+            --wa-dark: #111b21;
+            --bg-color: #efeae2;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .player-container {
+            background-color: var(--card-bg);
+            width: 100%;
+            max-width: 400px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            border: 1px solid #e1e8ed;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-color: #222;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content-padding {
+            padding: 20px;
+        }
+
+        .channel-badge {
+            display: inline-block;
+            background-color: #e1f3ed;
+            color: var(--wa-green);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 20px;
+            color: var(--wa-dark);
+            margin: 0 0 15px 0;
+        }
+
+        /* Individuell gestalteter Audio-Player */
+        .audio-player-box {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #e9ecef;
+        }
+
+        audio {
+            width: 100%;
+            outline: none;
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background-color: var(--wa-green);
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: background-color 0.2s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #019574;
+        }
+
+        .whatsapp-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="player-container">
+        <!-- Das Bild des Beitrags -->
+        <div class="image-wrapper">
+            <!-- Ersetze 'dein-bild.jpg' mit dem Bild aus dem WhatsApp-Channel -->
+            <img src="dein-bild.jpg" alt="WhatsApp Channel Media Bild" id="channelImage">
+        </div>
+
+        <div class="content-padding">
+            <span class="channel-badge">WhatsApp Channel</span>
+            <h1>Media Player & Beitrag</h1>
+
+            <!-- Der Musik / Audio Player -->
+            <div class="audio-player-box">
+                <!-- Ersetze 'deine-musik.mp3' mit der Musikdatei -->
+                <audio controls id="channelAudio">
+                    <source src="deine-musik.mp3" type="audio/mpeg">
+                    Dein Browser unterstützt das Audio-Element nicht.
+                </audio>
+            </div>
+
+            <!-- Direkter Link zum WhatsApp Channel Beitrag -->
+            <a href="https://whatsapp.com/channel/0029VbCHLma0wajn1YRl4B1J/130" target="_blank" class="whatsapp-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.198-.198.347-.764.967-.937 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                Auf WhatsApp ansehen
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript, um den Link-Bezug im Hintergrund zu verknüpfen -->
+    <script>
+        const channelLink = "https://whatsapp.com/channel/0029VbCHLma0wajn1YRl4B1J/130";
+        console.log("Verknüpfter WhatsApp Channel Beitrag: " + channelLink);
+    </script>
+</body>
+</html>
