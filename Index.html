@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhatsApp Channel Media Player</title>
     
-    <!-- Open Graph Metadaten, damit der Link direkt Vorschaubilder und Infos ausliest -->
+    <!-- Open Graph Metadaten -->
     <meta property="og:title" content="WhatsApp Channel Media Player">
     <meta property="og:description" content="Höre dir den Song an und sieh dir das Bild aus dem WhatsApp-Channel an.">
     <meta property="og:url" content="https://whatsapp.com/channel/0029VbCHLma0wajn1YRl4B1J/130">
@@ -75,7 +75,6 @@
             margin: 0 0 15px 0;
         }
 
-        /* Individuell gestalteter Audio-Player */
         .audio-player-box {
             background: #f8f9fa;
             border-radius: 10px;
@@ -122,19 +121,17 @@
     <div class="player-container">
         <!-- Das Bild des Beitrags -->
         <div class="image-wrapper">
-            <!-- Ersetze 'dein-bild.jpg' mit dem Bild aus dem WhatsApp-Channel -->
-            <img src="dein-bild.jpg" alt="WhatsApp Channel Media Bild" id="channelImage">
+            <img src="https://raw.githubusercontent.com/Kalirusi5511/youtube-links2/main/dein-bild.jpg" alt="WhatsApp Channel Media Bild" id="channelImage">
         </div>
 
         <div class="content-padding">
             <span class="channel-badge">WhatsApp Channel</span>
-            <h1>Media Player & Beitrag</h1>
+            <h1>Haus am See</h1>
 
-            <!-- Der Musik / Audio Player -->
+            <!-- Der Musik-Player mit direktem GitHub-Stream-Link -->
             <div class="audio-player-box">
-                <!-- Ersetze 'deine-musik.mp3' mit der Musikdatei -->
                 <audio controls id="channelAudio">
-                    <source src="deine-musik.mp3" type="audio/mpeg">
+                    <source src="https://raw.githubusercontent.com/Kalirusi5511/youtube-links2/main/Haus%20am%20See.mp3" type="audio/mpeg">
                     Dein Browser unterstützt das Audio-Element nicht.
                 </audio>
             </div>
@@ -149,10 +146,5 @@
         </div>
     </div>
 
-    <!-- JavaScript, um den Link-Bezug im Hintergrund zu verknüpfen -->
-    <script>
-        const channelLink = "https://whatsapp.com/channel/0029VbCHLma0wajn1YRl4B1J/130";
-        console.log("Verknüpfter WhatsApp Channel Beitrag: " + channelLink);
-    </script>
 </body>
 </html>
